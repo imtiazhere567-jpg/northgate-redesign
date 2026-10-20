@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before and After</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,500&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --green: #2f7d5b; --canvas: #dcefe3; --orange: #e8742c; --ink: #1d2a24; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; font-family: Inter, sans-serif; color: var(--ink);
+    background-color: var(--canvas);
+    background-image: linear-gradient(rgba(47,125,91,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(47,125,91,.12) 1px, transparent 1px);
+    background-size: 28px 28px; display: flex; flex-direction: column; align-items: center; padding: 40px 16px 50px; }
+  .title { font-family: Fraunces, serif; font-size: clamp(34px, 5vw, 60px); margin: 0 0 6px; letter-spacing: -.02em; text-align: center; }
+  .title b { color: var(--orange); }
+  .sub { margin: 0 0 34px; color: #47604f; font-weight: 500; }
+  .split { display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .card { width: min(540px, 92vw); text-align: center; }
+  .label { display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: .16em; padding: 6px 12px; border-radius: 999px; margin-bottom: 14px; }
+  .before .label { background: #cfd4da; color: #4a5361; }
+  .after .label { background: var(--orange); color: #fff; }
+  .frame { width: 100%; aspect-ratio: 1280 / 820; border-radius: 14px; overflow: hidden; position: relative; background: #fff; }
+  .frame iframe { position: absolute; top: 0; left: 0; width: 1280px; height: 820px; border: 0; transform-origin: 0 0; pointer-events: none; }
+  .before .frame { box-shadow: 0 20px 40px -24px rgba(0,0,0,.4); transition: filter .8s, transform .8s; }
+  .after .frame { box-shadow: 0 0 0 4px var(--orange), 0 0 50px 6px rgba(232,116,44,.45), 0 30px 50px -24px rgba(0,0,0,.35); }
+  .dimmed .before .frame { filter: grayscale(1) opacity(.65); transform: rotate(-4deg) scale(.94); }
+  .dimmed .after .frame { animation: glow 2.6s ease-in-out infinite; }
+  @keyframes glow { 50% { box-shadow: 0 0 0 4px var(--orange), 0 0 80px 14px rgba(232,116,44,.6), 0 30px 50px -24px rgba(0,0,0,.35); } }
+  .check { margin-top: 34px; background: #fff; border-radius: 16px; padding: 18px 26px; display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; font-weight: 600; box-shadow: 0 14px 30px -20px rgba(0,0,0,.3); }
+  .check span::before { content: "✓"; display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--green); color: #fff; margin-right: 10px; font-size: 13px; }
+  .toggle { margin-top: 22px; font: 600 13px Inter, sans-serif; border: 0; background: rgba(29,42,36,.08); padding: 8px 14px; border-radius: 999px; cursor: pointer; }
+</style>
+</head>
+<body class="dimmed">
+  <h1 class="title"><b>Which</b> one would you call?</h1>
+  <p class="sub">Two sample about sections</p>
+
+  <div class="split">
+    <div class="card before">
+      <span class="label">BEFORE</span>
+      <div class="frame"><iframe src="before/#about" title="Before: Northgate"></iframe></div>
+    </div>
+    <div class="card after">
+      <span class="label">AFTER</span>
+      <div class="frame"><iframe src="after/?rec&still#about" title="After: Dan"></iframe></div>
+    </div>
+  </div>
+
+  <div class="check"><span>who you are</span><span>how long you've done it</span></div>
+  <button class="toggle" onclick="document.body.classList.toggle('dimmed')">Toggle grey and glow</button>
+
+<script>
+  function fit() {
+    document.querySelectorAll('.frame').forEach(f => {
+      f.querySelector('iframe').style.transform = 'scale(' + (f.clientWidth / 1280) + ')';
+    });
+  }
+  addEventListener('resize', fit); fit();
+</script>
+</body>
+</html>

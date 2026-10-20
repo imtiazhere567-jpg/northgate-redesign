@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northgate Construction Group | About Us</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #444; background: #eef0f3; font-size: 15px; line-height: 1.5; }
+  .stamp { position: fixed; bottom: 16px; right: 16px; z-index: 50; background: #fff; color: #c0392b; border: 2px solid #c0392b; font: bold 12px/1 Arial, sans-serif; letter-spacing: .12em; padding: 6px 10px; transform: rotate(4deg); }
+  header { background: #1f2f4d; color: #fff; }
+  .bar { max-width: 1040px; margin: 0 auto; padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .logo { font-weight: bold; font-size: 18px; letter-spacing: .04em; text-transform: uppercase; }
+  .logo small { display: block; font-weight: normal; font-size: 11px; color: #9aa7bd; letter-spacing: .2em; }
+  nav a { color: #cfd6e3; text-decoration: none; margin-left: 22px; font-size: 13px; text-transform: uppercase; }
+  nav a.on { color: #fff; border-bottom: 2px solid #8a98b3; padding-bottom: 3px; }
+  .banner { background: #5b6779; color: #fff; padding: 34px 20px; }
+  .banner div { max-width: 1040px; margin: 0 auto; }
+  .banner h1 { margin: 0; font-size: 28px; font-weight: normal; }
+  .crumb { font-size: 12px; color: #c8ced8; margin-top: 4px; }
+  main { max-width: 1040px; margin: 0 auto; padding: 36px 20px 50px; }
+  .about { background: #fff; border: 1px solid #d5d9e0; display: grid; grid-template-columns: 1fr 1.15fr; gap: 0; }
+  .photo { background: #9aa3ae; min-height: 320px; position: relative; overflow: hidden; }
+  .photo svg { width: 100%; height: 100%; display: block; }
+  .wm { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(255,255,255,.35); font-size: 26px; font-weight: bold; letter-spacing: .3em; transform: rotate(-20deg); pointer-events: none; }
+  .copy { padding: 34px 36px; }
+  .copy h2 { margin: 0 0 4px; color: #1f2f4d; font-size: 24px; }
+  .rule { width: 50px; height: 3px; background: #8a98b3; margin: 10px 0 20px; }
+  .copy p { margin: 0 0 14px; }
+  #lead { color: #1f2f4d; }
+  .btn { display: inline-block; margin-top: 8px; background: #1f2f4d; color: #fff; text-decoration: none; padding: 10px 22px; font-size: 13px; text-transform: uppercase; }
+  .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+  .values div { background: #fff; border: 1px solid #d5d9e0; padding: 20px; }
+  .values h3 { margin: 0 0 6px; font-size: 15px; color: #1f2f4d; text-transform: uppercase; }
+  .values p { margin: 0; font-size: 13px; color: #6b7280; }
+  footer { background: #1f2f4d; color: #8f9bb2; font-size: 12px; text-align: center; padding: 18px; }
+  @media (max-width: 760px) {
+    .about, .values { grid-template-columns: 1fr; }
+    nav a { margin: 0 14px 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="stamp">SAMPLE SITE</div>
+
+<header>
+  <div class="bar">
+    <div class="logo">Northgate <small>Construction Group</small></div>
+    <nav>
+      <a href="#">Home</a><a href="#" class="on">About Us</a><a href="#">Services</a><a href="#">Projects</a><a href="#">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="banner">
+  <div>
+    <h1>About Us</h1>
+    <div class="crumb">Home &rsaquo; About Us</div>
+  </div>
+</section>
+
+<main>
+  <section class="about" id="about">
+    <div class="photo" aria-label="Stock photo of a hard hat">
+      <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9c1cb"/><stop offset="1" stop-color="#8b95a1"/></linearGradient>
+          <linearGradient id="hat" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f4f4"/><stop offset="1" stop-color="#c9ccd1"/></linearGradient>
+        </defs>
+        <rect width="400" height="320" fill="url(#sky)"/>
+        <g stroke="#7b8592" stroke-width="6" fill="none" opacity=".6">
+          <path d="M40 320 V60 H120 V320 M40 120 H120 M40 180 H120 M40 240 H120 M40 60 L120 120 M120 120 L40 180 M40 180 L120 240"/>
+          <path d="M300 320 V30 M300 40 H390 M300 40 L360 80"/>
+        </g>
+        <rect x="80" y="250" width="240" height="70" fill="#6f7884"/>
+        <path d="M120 230 Q120 140 200 140 Q280 140 280 230 Z" fill="url(#hat)"/>
+        <rect x="100" y="226" width="200" height="16" rx="8" fill="#d9dce0"/>
+        <rect x="192" y="140" width="16" height="90" fill="#e6e8eb"/>
+      </svg>
+      <div class="wm">STOCK</div>
+    </div>
+    <div class="copy">
+      <h2>About Us</h2>
+      <div class="rule"></div>
+      <p id="lead">Northgate Construction Group is <span id="leading">a leading provider of quality building solutions</span>.</p>
+      <p>We are committed to delivering excellence across a wide range of residential and commercial projects. Our dedicated team of professionals leverages industry best practice to deliver value-driven outcomes for our clients.</p>
+      <p>With a customer-focused approach and a commitment to safety, quality and innovation, we strive to exceed expectations on every project, on time and on budget.</p>
+      <a class="btn" href="#">Learn More</a>
+    </div>
+  </section>
+
+  <section class="values">
+    <div><h3>Quality</h3><p>We deliver high quality solutions to the highest standards.</p></div>
+    <div><h3>Integrity</h3><p>We operate with honesty and integrity in all that we do.</p></div>
+    <div><h3>Excellence</h3><p>We are committed to excellence in every project.</p></div>
+  </section>
+</main>
+
+<footer>&copy; 2026 Northgate Construction Group Ltd. All rights reserved. | Sample site for demonstration only</footer>
+</body>
+</html>

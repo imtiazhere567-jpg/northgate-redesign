@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northgate · Before &amp; After</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --cream: #f7f0e3; --ink: #2a2520; --orange: #e8742c; --green: #2f7d5b; --ease: cubic-bezier(.22, 1, .36, 1); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { min-height: 100vh; font-family: Inter, system-ui, sans-serif; background: var(--cream); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; }
+  .eyebrow { font-size: 12px; letter-spacing: .26em; text-transform: uppercase; color: var(--green); font-weight: 600; }
+  h1 { font-family: Fraunces, Georgia, serif; font-size: clamp(44px, 7vw, 84px); line-height: 1; margin: 16px 0 14px; text-align: center; letter-spacing: -.02em; }
+  h1 em { color: var(--orange); font-weight: 500; }
+  p.sub { color: #6f655a; text-align: center; max-width: 480px; line-height: 1.6; }
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); gap: 22px; margin-top: 50px; width: 100%; justify-content: center; }
+  a.card { position: relative; display: block; border-radius: 28px; overflow: hidden; aspect-ratio: 4 / 5; color: #fff; text-decoration: none; box-shadow: 0 30px 60px -30px rgba(42,37,32,.5); }
+  a.card img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); display: block; }
+  a.card:hover img { transform: scale(1.06); }
+  a.card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(25,20,15,.85)); }
+  a.card .lbl { position: absolute; left: 26px; right: 26px; bottom: 24px; z-index: 1; }
+  a.card small { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; opacity: .8; }
+  a.card b { display: block; font-family: Fraunces, Georgia, serif; font-size: 40px; line-height: 1.05; margin: 4px 0 6px; }
+  a.card span { font-size: 14px; opacity: .85; }
+  a.card.after b::after { content: " →"; color: var(--orange); }
+  a.card.before img { filter: grayscale(.7) brightness(.85); }
+  .more { margin-top: 30px; font-size: 14px; }
+  .more a { color: var(--ink); font-weight: 600; }
+  footer { margin-top: 40px; font-size: 13px; color: #9a8f80; }
+  @media (max-width: 640px) { .cards { grid-template-columns: 1fr; max-width: 360px; } }
+</style>
+</head>
+<body>
+  <span class="eyebrow">Sample site · Website redesign</span>
+  <h1>Northgate, <em>redesigned.</em></h1>
+  <p class="sub">Same company, same sections. The original corporate site, and the redesign: personal, warm and animated.</p>
+  <div class="cards">
+    <a class="card before" href="before/">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=75" alt="">
+      <div class="lbl"><small>Before</small><b>Current site</b><span>"A leading provider of quality building solutions"</span></div>
+    </a>
+    <a class="card after" href="after/">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=75" alt="">
+      <div class="lbl"><small>After</small><b>The redesign</b><span>Same company, now personal and animated</span></div>
+    </a>
+  </div>
+  <p class="more">Side by side for recording: <a href="compare.html">compare.html</a></p>
+  <footer>Sample sites for demonstration only</footer>
+</body>
+</html>
