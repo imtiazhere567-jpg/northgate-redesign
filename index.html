@@ -3,50 +3,288 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Northgate · Before &amp; After</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Northgate Construction Group | Quality Building Solutions</title>
 <style>
-  :root { --cream: #f7f0e3; --ink: #2a2520; --orange: #e8742c; --green: #2f7d5b; --ease: cubic-bezier(.22, 1, .36, 1); }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { min-height: 100vh; font-family: Inter, system-ui, sans-serif; background: var(--cream); color: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 20px; }
-  .eyebrow { font-size: 12px; letter-spacing: .26em; text-transform: uppercase; color: var(--green); font-weight: 600; }
-  h1 { font-family: Fraunces, Georgia, serif; font-size: clamp(44px, 7vw, 84px); line-height: 1; margin: 16px 0 14px; text-align: center; letter-spacing: -.02em; }
-  h1 em { color: var(--orange); font-weight: 500; }
-  p.sub { color: #6f655a; text-align: center; max-width: 480px; line-height: 1.6; }
-  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); gap: 22px; margin-top: 50px; width: 100%; justify-content: center; }
-  a.card { position: relative; display: block; border-radius: 28px; overflow: hidden; aspect-ratio: 4 / 5; color: #fff; text-decoration: none; box-shadow: 0 30px 60px -30px rgba(42,37,32,.5); }
-  a.card img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); display: block; }
-  a.card:hover img { transform: scale(1.06); }
-  a.card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(25,20,15,.85)); }
-  a.card .lbl { position: absolute; left: 26px; right: 26px; bottom: 24px; z-index: 1; }
-  a.card small { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; opacity: .8; }
-  a.card b { display: block; font-family: Fraunces, Georgia, serif; font-size: 40px; line-height: 1.05; margin: 4px 0 6px; }
-  a.card span { font-size: 14px; opacity: .85; }
-  a.card.after b::after { content: " →"; color: var(--orange); }
-  a.card.before img { filter: grayscale(.7) brightness(.85); }
-  .more { margin-top: 30px; font-size: 14px; }
-  .more a { color: var(--ink); font-weight: 600; }
-  footer { margin-top: 40px; font-size: 13px; color: #9a8f80; }
-  @media (max-width: 640px) { .cards { grid-template-columns: 1fr; max-width: 360px; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #4a4f57; background: #fff; font-size: 15px; line-height: 1.6; }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  a { color: #1f2f4d; text-decoration: none; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3, h4 { color: #1f2f4d; margin: 0; }
+  section { padding: 70px 0; }
+  .grey { background: #f1f3f6; }
+  .title { text-align: center; margin-bottom: 40px; }
+  .title h2 { font-size: 30px; text-transform: uppercase; letter-spacing: 1px; }
+  .title .line { width: 60px; height: 3px; background: #8a98b3; margin: 12px auto 0; }
+  .title p { color: #7a808a; margin: 14px auto 0; max-width: 620px; }
+  .btn { display: inline-block; background: #1f2f4d; color: #fff; padding: 12px 26px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border: 0; cursor: pointer; font-family: inherit; }
+  .btn.light { background: #fff; color: #1f2f4d; }
+
+  .stamp { position: fixed; bottom: 16px; right: 16px; z-index: 50; background: #fff; color: #c0392b; border: 2px solid #c0392b; font: bold 12px/1 Arial, sans-serif; letter-spacing: .12em; padding: 6px 10px; transform: rotate(4deg); }
+
+  /* top bar + header */
+  .topbar { background: #16233b; color: #9aa7bd; font-size: 12px; padding: 8px 0; }
+  .topbar .wrap { display: flex; justify-content: space-between; gap: 10px; }
+  header { background: #1f2f4d; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+  .logo { color: #fff; font-weight: bold; font-size: 20px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.1; }
+  .logo small { display: block; font-weight: normal; font-size: 10px; color: #9aa7bd; letter-spacing: 3px; }
+  nav a { color: #cfd6e3; margin-left: 26px; font-size: 13px; text-transform: uppercase; }
+  nav a:hover { color: #fff; }
+
+  /* hero */
+  .hero { position: relative; height: 520px; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: rgba(22, 35, 59, .6); }
+  .hero .txt { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; }
+  .hero h1 { color: #fff; font-size: 46px; text-transform: uppercase; letter-spacing: 1px; }
+  .hero p { font-size: 18px; margin: 12px 0 26px; max-width: 620px; color: #dfe4ec; }
+
+  /* stats */
+  .stats { background: #5b6779; color: #fff; padding: 34px 0; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
+  .stats b { display: block; font-size: 30px; }
+  .stats span { font-size: 13px; text-transform: uppercase; color: #d3d8e0; }
+
+  /* about */
+  .wrap.about { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  .about .pic { height: 400px; }
+  .about h2 { font-size: 30px; margin-bottom: 6px; }
+  .about .line { width: 50px; height: 3px; background: #8a98b3; margin: 12px 0 20px; }
+  .about ul { padding-left: 18px; margin: 0 0 22px; }
+
+  /* services */
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .svc { background: #fff; border: 1px solid #dde1e7; }
+  .svc .pic { height: 190px; }
+  .svc div.t { padding: 20px 22px 24px; }
+  .svc h3 { font-size: 17px; text-transform: uppercase; margin-bottom: 8px; }
+  .svc p { margin: 0 0 12px; font-size: 14px; }
+  .svc a { font-size: 13px; text-transform: uppercase; font-weight: bold; }
+
+  /* why */
+  .why { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+  .why div { padding: 10px; }
+  .why .ic { width: 64px; height: 64px; border-radius: 50%; background: #1f2f4d; color: #fff; font-size: 26px; line-height: 64px; margin: 0 auto 16px; }
+  .why h3 { font-size: 16px; text-transform: uppercase; margin-bottom: 8px; }
+  .why p { margin: 0; font-size: 14px; }
+
+  /* projects */
+  .gal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .gal div { height: 220px; }
+  .center { text-align: center; margin-top: 30px; }
+
+  /* testimonials */
+  .testi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  .t { background: #fff; border: 1px solid #dde1e7; padding: 26px; }
+  .t p { font-style: italic; margin: 0 0 14px; }
+  .t b { color: #1f2f4d; font-size: 14px; }
+  .stars { color: #8a98b3; letter-spacing: 2px; margin-bottom: 10px; }
+
+  /* accreditations */
+  .accr { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .accr div { border: 1px solid #dde1e7; height: 70px; display: grid; place-items: center; color: #9aa1ab; font-weight: bold; font-size: 13px; text-transform: uppercase; text-align: center; padding: 0 8px; }
+
+  /* cta band */
+  .band { background: #1f2f4d; color: #fff; padding: 50px 0; }
+  .band .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+  .band h2 { color: #fff; font-size: 26px; }
+  .band p { margin: 6px 0 0; color: #b9c3d4; }
+
+  /* contact */
+  .wrap.contact { display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; }
+  .contact h3 { font-size: 20px; margin-bottom: 14px; text-transform: uppercase; }
+  .contact table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px; }
+  .contact td { padding: 7px 0; border-bottom: 1px solid #e3e6eb; }
+  .contact td:first-child { font-weight: bold; color: #1f2f4d; width: 110px; }
+  form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  input, select, textarea { width: 100%; padding: 11px 12px; border: 1px solid #cdd2da; font: inherit; font-size: 14px; background: #fff; }
+  textarea { grid-column: 1 / -1; height: 120px; resize: vertical; }
+  form .btn { grid-column: 1 / -1; justify-self: start; }
+
+  footer { background: #16233b; color: #8f9bb2; padding: 50px 0 20px; font-size: 14px; }
+  .foot { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 30px; }
+  footer h4 { color: #fff; font-size: 14px; text-transform: uppercase; margin: 0 0 14px; }
+  footer a { color: #8f9bb2; display: block; margin-bottom: 6px; }
+  .copy { border-top: 1px solid rgba(255,255,255,.1); margin-top: 30px; padding-top: 18px; text-align: center; font-size: 12px; }
+
+  @media (max-width: 860px) {
+    nav { display: none; }
+    .hero { height: 420px; } .hero h1 { font-size: 32px; }
+    .wrap.about, .wrap.contact, .band .wrap { grid-template-columns: 1fr; display: grid; }
+    .svc-grid, .testi, .foot { grid-template-columns: 1fr; }
+    .why, .stats .wrap { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .gal { grid-template-columns: repeat(2, 1fr); }
+    .accr { grid-template-columns: repeat(2, 1fr); }
+    form { grid-template-columns: 1fr; }
+    .topbar .wrap { flex-direction: column; text-align: center; }
+  }
 </style>
 </head>
 <body>
-  <span class="eyebrow">Sample site · Website redesign</span>
-  <h1>Northgate, <em>redesigned.</em></h1>
-  <p class="sub">Same company, same sections. The original corporate site, and the redesign: personal, warm and animated.</p>
-  <div class="cards">
-    <a class="card before" href="before/">
-      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=75" alt="">
-      <div class="lbl"><small>Before</small><b>Current site</b><span>"A leading provider of quality building solutions"</span></div>
-    </a>
-    <a class="card after" href="after/">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=75" alt="">
-      <div class="lbl"><small>After</small><b>The redesign</b><span>Same company, now personal and animated</span></div>
-    </a>
+
+
+<div class="topbar">
+  <div class="wrap"><span>Tel: 0113 496 0000 &nbsp;|&nbsp; Email: info@northgate-example.co.uk</span><span>Mon - Fri: 8:00am - 5:00pm</span></div>
+</div>
+
+<header>
+  <div class="wrap">
+    <a href="#" class="logo">Northgate<small>Construction Group</small></a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
-  <p class="more">Side by side for recording: <a href="compare.html">compare.html</a></p>
-  <footer>Sample sites for demonstration only</footer>
+</header>
+
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1800&q=70" alt="Construction team on site">
+  <div class="txt">
+    <h1>Building Excellence. Delivering Quality.</h1>
+    <p>Professional construction services for residential and commercial clients across the region.</p>
+    <a href="#contact" class="btn light">Request a Quote</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="wrap">
+    <div><b>500+</b><span>Projects Completed</span></div>
+    <div><b>100%</b><span>Customer Focused</span></div>
+    <div><b>50+</b><span>Skilled Professionals</span></div>
+    <div><b>24/7</b><span>Commitment</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <div class="pic"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=70" alt="Stock photo of a worker in a hard hat"></div>
+    <div>
+      <h2>About Us</h2>
+      <div class="line"></div>
+      <p><strong>Northgate Construction Group is a leading provider of quality building solutions.</strong></p>
+      <p>We are committed to delivering excellence across a wide range of residential and commercial projects. Our dedicated team of professionals leverages industry best practice to deliver value-driven outcomes for our clients.</p>
+      <p>With a customer-focused approach and a commitment to safety, quality and innovation, we strive to exceed expectations on every project.</p>
+      <ul>
+        <li>Fully qualified and experienced team</li>
+        <li>Quality workmanship guaranteed</li>
+        <li>Competitive pricing</li>
+      </ul>
+      <a href="#" class="btn">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="grey">
+  <div class="wrap">
+    <div class="title"><h2>Our Services</h2><div class="line"></div><p>We offer a comprehensive range of construction services tailored to meet the needs of our clients.</p></div>
+    <div class="svc-grid">
+      <div class="svc"><div class="pic"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=70" alt=""></div><div class="t"><h3>Extensions</h3><p>High quality extension solutions delivered to the highest standards.</p><a href="#">Read More &raquo;</a></div></div>
+      <div class="svc"><div class="pic"><img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=700&q=70" alt=""></div><div class="t"><h3>Kitchens</h3><p>Professional kitchen installation services for all requirements.</p><a href="#">Read More &raquo;</a></div></div>
+      <div class="svc"><div class="pic"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=70" alt=""></div><div class="t"><h3>Renovations</h3><p>Complete renovation solutions for residential properties.</p><a href="#">Read More &raquo;</a></div></div>
+      <div class="svc"><div class="pic"><img src="https://images.unsplash.com/photo-1590725140246-20acdee442be?auto=format&fit=crop&w=700&q=70" alt=""></div><div class="t"><h3>Loft Conversions</h3><p>Maximise your space with our loft conversion services.</p><a href="#">Read More &raquo;</a></div></div>
+      <div class="svc"><div class="pic"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=700&q=70" alt=""></div><div class="t"><h3>Commercial</h3><p>Commercial building solutions delivered on time and on budget.</p><a href="#">Read More &raquo;</a></div></div>
+      <div class="svc"><div class="pic"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=70" alt=""></div><div class="t"><h3>Project Management</h3><p>End-to-end project management from concept to completion.</p><a href="#">Read More &raquo;</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="title"><h2>Why Choose Us</h2><div class="line"></div></div>
+    <div class="why">
+      <div><div class="ic">&#9733;</div><h3>Quality</h3><p>We deliver high quality solutions to the highest standards.</p></div>
+      <div><div class="ic">&#10004;</div><h3>Integrity</h3><p>We operate with honesty and integrity in all that we do.</p></div>
+      <div><div class="ic">&#9873;</div><h3>Safety</h3><p>Safety is at the heart of everything we do.</p></div>
+      <div><div class="ic">&#9650;</div><h3>Excellence</h3><p>We are committed to excellence in every project.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="grey">
+  <div class="wrap">
+    <div class="title"><h2>Recent Projects</h2><div class="line"></div><p>Take a look at a selection of our recent projects.</p></div>
+    <div class="gal">
+      <div><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=500&q=70" alt=""></div>
+      <div><img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=500&q=70" alt=""></div>
+      <div><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=70" alt=""></div>
+      <div><img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=500&q=70" alt=""></div>
+      <div><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=500&q=70" alt=""></div>
+      <div><img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=500&q=70" alt=""></div>
+      <div><img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=500&q=70" alt=""></div>
+      <div><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=500&q=70" alt=""></div>
+    </div>
+    <div class="center"><a href="#" class="btn">View All Projects</a></div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="wrap">
+    <div class="title"><h2>Testimonials</h2><div class="line"></div><p>Here's what some of our clients have to say.</p></div>
+    <div class="testi">
+      <div class="t"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Very professional service from start to finish. Would recommend."</p><b>- J. Smith</b></div>
+      <div class="t"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Great quality of work and completed on time. Thank you."</p><b>- Mrs A. Brown</b></div>
+      <div class="t"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Excellent company to deal with. Very happy with the results."</p><b>- M. Wilson</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="grey" style="padding: 50px 0;">
+  <div class="wrap">
+    <div class="title" style="margin-bottom: 26px;"><h2 style="font-size: 20px;">Accreditations</h2></div>
+    <div class="accr">
+      <div>Accreditation Logo</div><div>Accreditation Logo</div><div>Accreditation Logo</div><div>Accreditation Logo</div><div>Accreditation Logo</div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div><h2>Looking for a Reliable Building Contractor?</h2><p>Contact us today to discuss your requirements.</p></div>
+    <a href="#contact" class="btn light">Get a Free Quote</a>
+  </div>
+</div>
+
+<section id="contact">
+  <div class="wrap contact">
+    <div>
+      <h3>Contact Information</h3>
+      <table>
+        <tr><td>Address</td><td>Unit 4, Northgate Business Park, Leeds</td></tr>
+        <tr><td>Telephone</td><td>0113 496 0000</td></tr>
+        <tr><td>Email</td><td>info@northgate-example.co.uk</td></tr>
+        <tr><td>Hours</td><td>Monday - Friday, 8:00am - 5:00pm</td></tr>
+      </table>
+      <p>Please fill out the enquiry form and a member of our team will get back to you as soon as possible.</p>
+    </div>
+    <div>
+      <h3>Enquiry Form</h3>
+      <form onsubmit="return false">
+        <input placeholder="Name *">
+        <input placeholder="Email *">
+        <input placeholder="Phone">
+        <select><option>Service Required</option><option>Extensions</option><option>Kitchens</option><option>Renovations</option><option>Loft Conversions</option><option>Commercial</option></select>
+        <textarea placeholder="Message"></textarea>
+        <button class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><h4>Northgate Construction Group</h4><p>A leading provider of quality building solutions for residential and commercial clients.</p></div>
+      <div><h4>Quick Links</h4><a href="#">Home</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#projects">Projects</a></div>
+      <div><h4>Services</h4><a href="#">Extensions</a><a href="#">Kitchens</a><a href="#">Renovations</a><a href="#">Commercial</a></div>
+      <div><h4>Contact</h4><a href="#">0113 496 0000</a><a href="#">info@northgate-example.co.uk</a></div>
+    </div>
+    <div class="copy">&copy; 2026 Northgate Construction Group Ltd. All rights reserved. | Privacy Policy | Terms &amp; Conditions | Sample site for demonstration only</div>
+  </div>
+</footer>
+
 </body>
 </html>
